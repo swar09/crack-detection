@@ -4,7 +4,7 @@ A complete end-to-end system for **crack segmentation and detection** using **U-
 This project allows training, inference, and deployment of a crack segmentation model, along with planned support for crack measurement and classification.
 
 ---
-
+# Input image vs Output image
 ![Input vs Output](assets/input_v_output.png)
 
 
@@ -165,6 +165,7 @@ This project is licensed under the **MIT License**.
 - Dataset: [Lakshay Middha](https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset)
 - Segmentation Models: [segmentation-models-pytorch](https://github.com/qubvel/segmentation_models.pytorch)
 - Framework: [Flask](https://flask.palletsprojects.com/)
+
 
 
 
