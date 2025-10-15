@@ -80,7 +80,14 @@ kaggle datasets download -d lakshaymiddha/crack-segmentation-dataset -p ./data -
 ```bash
 python dataset_download.py
 ```
-
+#### Setup Data Augmentation (virtual dataset) 
+```bash
+python data_agumentation.py
+```
+#### Data cleaning (Applying binary-threshold)  
+```bash
+python masks_cleaning.py
+```
 Expected structure:
 ```
 Dataset/
@@ -169,6 +176,7 @@ This project is licensed under the **MIT License**.
 - Dataset: [Lakshay Middha](https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset)
 - Segmentation Models: [segmentation-models-pytorch](https://github.com/qubvel/segmentation_models.pytorch)
 - Framework: [Flask](https://flask.palletsprojects.com/)
+
 
 
 
