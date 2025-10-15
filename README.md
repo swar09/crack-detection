@@ -5,6 +5,10 @@ This project allows training, inference, and deployment of a crack segmentation 
 
 ---
 
+![Input vs Output](assets/input_v_output.png)
+
+
+---
 ## 📂 Project Structure
 
 ```
@@ -161,6 +165,7 @@ This project is licensed under the **MIT License**.
 - Dataset: [Lakshay Middha](https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset)
 - Segmentation Models: [segmentation-models-pytorch](https://github.com/qubvel/segmentation_models.pytorch)
 - Framework: [Flask](https://flask.palletsprojects.com/)
+
 
 
 
