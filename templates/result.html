@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Result</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f9; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 90%; }
+        h1 { color: #333; }
+        .media-container { margin-top: 20px; margin-bottom: 30px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; }
+        img, video { max-width: 100%; height: auto; max-height: 60vh; }
+        .button { background-color: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-size: 16px; margin: 5px; display: inline-block; transition: background-color 0.3s; }
+        .button:hover { background-color: #218838; }
+        .button-secondary { background-color: #6c757d; }
+        .button-secondary:hover { background-color: #5a6268; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Processing Complete!</h1>
+        <div class="media-container">
+            {% if is_video %}
+                <video controls>
+                    <source src="{{ url_for('uploaded_file', filename=filename) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% else %}
+                <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Processed Image">
+            {% endif %}
+        </div>
+        <a href="{{ url_for('uploaded_file', filename=filename) }}" class="button" download>Download Result</a>
+        <a href="/" class="button button-secondary">Process Another File</a>
+    </div>
+</body>
+</html>
