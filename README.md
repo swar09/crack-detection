@@ -49,6 +49,7 @@ pip install -r requirements.txt
 - numpy, pandas, tqdm, matplotlib
 - Flask
 - kaggle *(for dataset download)*
+- For Inference only **[best_model.pth](https://drive.google.com/file/d/16HRyJpR2TVhT6cG2LNY-pmLkYKbjNpfv/view?usp=sharing)**  
 
 ---
 
@@ -160,5 +161,6 @@ This project is licensed under the **MIT License**.
 - Dataset: [Lakshay Middha](https://www.kaggle.com/datasets/lakshaymiddha/crack-segmentation-dataset)
 - Segmentation Models: [segmentation-models-pytorch](https://github.com/qubvel/segmentation_models.pytorch)
 - Framework: [Flask](https://flask.palletsprojects.com/)
+
 
 
