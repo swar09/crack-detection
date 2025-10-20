@@ -4,12 +4,10 @@ import numpy as np
 import segmentation_models_pytorch as smp
 from tqdm import tqdm
 
-# --- Configuration ---
 RESIZE_DIM = (448, 448)
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MODEL_PATH = "weights/best_model.pth"
 
-# --- Load the Model (once) ---
 print("Loading model...")
 model = smp.Unet(
     encoder_name="resnet50",
@@ -19,10 +17,8 @@ model = smp.Unet(
     activation='sigmoid'
 ).to(DEVICE)
 
-# Load the state dictionary. This handles both simple and checkpoint files.
 try:
     checkpoint = torch.load(MODEL_PATH, map_location=torch.device(DEVICE))
-    # Check if it's a checkpoint dictionary or a raw state_dict
     if 'model_state_dict' in checkpoint:
         model.load_state_dict(checkpoint['model_state_dict'])
     else:
@@ -33,7 +29,6 @@ except Exception as e:
     print(f"Error loading model: {e}")
     model = None
 
-# --- Helper Functions (from your previous scripts) ---
 
 def preprocess_frame(frame: np.ndarray) -> torch.Tensor:
     """Resizes and preprocesses a video frame for model inference."""
@@ -49,7 +44,6 @@ def create_overlay(original_image: np.ndarray, prediction_mask: np.ndarray) -> n
     overlay = cv2.addWeighted(original_image, 1.0, color_mask, 0.5, 0)
     return overlay
 
-# --- Main Processing Functions ---
 
 def process_image(input_path: str, output_path: str):
     """Processes a single image file."""
